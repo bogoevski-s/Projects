@@ -1,0 +1,51 @@
+html body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgb(247, 248, 199)), to(#3ce5fc)) fixed;
+
+}
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.1em;
+    letter-spacing: 1.5px;
+    text-align: center;
+    box-sizing: border-box;
+}
+.mainDiv{
+    width: 50%;
+    margin: 10% auto;
+}
+::-webkit-input-placeholder {
+    text-align: center;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+ }
+#addTodo{
+    color: rgb(0, 125, 241);
+}
+#remove{
+    color: rgb(221, 31, 31);
+}
+.fa-trash-alt{
+    color: rgb(221, 31, 31);
+}
+.fas:hover{
+    cursor:pointer;
+    display: inline;
+}
+li:hover{
+    color: salmon;
+}
+li{
+    width: 50%;
+    margin: 10px auto;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    box-sizing: border-box;
+    /* display: inline; */
+    text-align: center;
+}
+ul {
+    list-style-type: none;
+  }
