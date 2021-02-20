@@ -47,6 +47,7 @@ function equalKey(total) {
         result = Math.round(result * Math.pow(10,6)) / Math.pow(10,6)
         results.push(result)
         currentDisplay.text(currentDisplay.text() + result);
+        console.log(parsedNumbers)
     }
     if (operations[operations.length - 1] === '-') {
         let result = parsedNumbers[parsedNumbers.length - 2] - parsedNumbers[parsedNumbers.length - 1];
@@ -67,6 +68,7 @@ function equalKey(total) {
         currentDisplay.text(currentDisplay.text() + result);
     }
     stringNumbers = [];
+    parsedNumbers = [];
 }
 
 // clear key function
