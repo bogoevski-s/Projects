@@ -1,27 +1,84 @@
+// Start game div selectors
+startDiv = document.getElementById("start-container");
 playButton = document.getElementById("playBtn");
-startDiv = document.getElementById("start-container")
-gameDiv = document.getElementById("game-container")
-scoreDisplay = document.getElementById("score");
-questionDisplay = document.getElementById("question")
-
-nextBtn = document.getElementById("nexBtn")
-quitBtn = document.getElementById("quitBtn")
-allButtons = document.getElementsByClassName("buttons")
-score = document.getElementById("score")
-answerDiv = document.getElementById("answers")
-
+// Category game div selectors
+categoryDisplay = document.getElementById("category-container");
+// Difficulty level
+difficultyDisplay = document.getElementById("difficulty-container")
+// Game div selectors
+gameDiv = document.getElementById("game-container");
+questionDisplay = document.getElementById("question");
+// Buttons next/quit div selectors
+nextBtn = document.getElementById("nexBtn");
+quitBtn = document.getElementById("quitBtn");
+allButtons = document.getElementsByClassName("buttons");
+score = document.getElementById("score");
+answerDiv = document.getElementById("answers");
 
 // Start Game
 playButton.addEventListener("click", () => {
-    getDataAsync()
+    category();
     startDiv.style.display = "none";
-    gameDiv.style.display = "flex";
-
+    gameDiv.style.display = "none";
 })
+// Category
+let userCategory = "";
+let category = function () {
+    categoryDisplay.style.display = "flex"
+    document.querySelectorAll(".btn").forEach(allCategory => {
+        allCategory.addEventListener("click", () => {
+            if (allCategory.value === "&category=21") {
+                userCategory = "&category=21";
+                categoryDisplay.style.display = "none"
+                difficultyLevel()
+            } else if (allCategory.value === "&category=22") {
+                userCategory = "&category=22";
+                categoryDisplay.style.display = "none"
+                difficultyLevel()
+            } else if (allCategory.value === "&category=23") {
+                userCategory = "&category=23";
+                categoryDisplay.style.display = "none"
+                difficultyLevel()
+            } else if (allCategory.value === "&category=18") {
+                userCategory = "&category=18";
+                categoryDisplay.style.display = "none"
+                difficultyLevel()
+            }
+        })
+    })
+}
+// Difficulty level
+let userDifficulty = ""
+let difficultyLevel = function () {
+    categoryDisplay.style.display = "none";
+    difficultyDisplay.style.display = "flex";
+
+    document.querySelectorAll(".btn").forEach(difficulty => {
+        difficulty.addEventListener("click", () => {
+            if (difficulty.value === "&difficulty=easy") {
+                userDifficulty = "&difficulty=easy";
+                difficultyDisplay.style.display = "none"
+                gameDiv.style.display = "flex";
+                getDataAsync(userCategory, userDifficulty)
+            } else if (difficulty.value === "&difficulty=medium") {
+                userDifficulty = "&difficulty=medium";
+                difficultyDisplay.style.display = "none"
+                gameDiv.style.display = "flex";
+                getDataAsync(userCategory, userDifficulty)
+            } else if (difficulty.value === "&difficulty=hard") {
+                userDifficulty = "&difficulty=hard";
+                difficultyDisplay.style.display = "none"
+                gameDiv.style.display = "flex";
+                getDataAsync(userCategory, userDifficulty)
+            }
+        })
+    })
+}
 // Getting data
-async function getDataAsync() {
-    let response = await fetch("https://opentdb.com/api.php?amount=1&type=multiple")
+async function getDataAsync(category, difficulty) {
+    let response = await fetch(`https://opentdb.com/api.php?amount=1${category}${difficulty}&type=multiple`)
     let question = await response.json()
+    console.log(question)
     displayQuestion(question)
 }
 
@@ -82,7 +139,7 @@ let correctAnswerIfWrong = function () {
 
 // Next question BTN
 let nextQuestion = function () {
-    getDataAsync()
+    getDataAsync(userCategory, userDifficulty)
     document.querySelectorAll('.buttons').forEach(item => {
         item.style.backgroundColor = "transparent"
     })
@@ -97,17 +154,24 @@ nextBtn.addEventListener("click", nextQuestion)
 let quit = function () {
     startDiv.style.display = "flex";
     gameDiv.style.display = "none";
+    categoryDisplay.style.display = "none"
+    difficultyDisplay.style.display = "none";
     questionDisplay.innerHTML = ``
     answerDiv.innerHTML = ``
     score.innerHTML = ``
     nextBtn.style.display = "none"
     quitBtn.style.display = "none"
     points = 0
+    userCategory = "";
+    userDifficulty = "";
 }
 quitBtn.addEventListener("click", quit)
 
 try {
-    getDataAsync()
+    getDataAsync
+    difficultyLevel
+    displayQuestion
+
 }
 catch (error) {
     console.warn(error)

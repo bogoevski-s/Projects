@@ -21,9 +21,28 @@ h3 {
 
 }
 #start-container{
+
     width: 100vw;
     height: 100vh;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 80rem;
+    margin: 0 auto;
+}
+#category-container{
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    max-width: 80rem;
+    margin: 0 auto;
+}
+#difficulty-container{
+    display: none;
+    width: 100vw;
+    height: 100vh;
     justify-content: center;
     align-items: center;
     max-width: 80rem;
@@ -88,6 +107,15 @@ h3 {
 #home h1{
     background-color: rgba(0, 0, 0, 0.379);
     box-shadow: 1px 1px 50px 50px rgba(0, 0, 0, 0.379);
+}
+#category h1{
+    background-color: rgba(0, 0, 0, 0.379);
+    box-shadow: 1px 1px 50px 50px rgba(0, 0, 0, 0.379); 
+}
+#difficulty h1{
+    letter-spacing: 0.2rem;
+    background-color: rgba(0, 0, 0, 0.379);
+    box-shadow: 1px 1px 50px 50px rgba(0, 0, 0, 0.379); 
 }
 #question{
     background-color: rgba(0, 0, 0, 0.379);
