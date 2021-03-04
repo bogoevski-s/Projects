@@ -25,55 +25,56 @@ playButton.addEventListener("click", () => {
 let userCategory = "";
 let category = function () {
     categoryDisplay.style.display = "flex"
-    document.querySelectorAll(".btn").forEach(allCategory => {
-        allCategory.addEventListener("click", () => {
-            if (allCategory.value === "&category=21") {
-                userCategory = "&category=21";
-                categoryDisplay.style.display = "none"
-                difficultyLevel()
-            } else if (allCategory.value === "&category=22") {
-                userCategory = "&category=22";
-                categoryDisplay.style.display = "none"
-                difficultyLevel()
-            } else if (allCategory.value === "&category=23") {
-                userCategory = "&category=23";
-                categoryDisplay.style.display = "none"
-                difficultyLevel()
-            } else if (allCategory.value === "&category=18") {
-                userCategory = "&category=18";
-                categoryDisplay.style.display = "none"
-                difficultyLevel()
-            }
-        })
-    })
 }
+document.querySelectorAll(".btn").forEach(allCategory => {
+    allCategory.addEventListener("click", () => {
+        if (allCategory.value === "&category=21") {
+            userCategory = "&category=21";
+            categoryDisplay.style.display = "none"
+            difficultyLevel()
+        } else if (allCategory.value === "&category=22") {
+            userCategory = "&category=22";
+            categoryDisplay.style.display = "none"
+            difficultyLevel()
+        } else if (allCategory.value === "&category=23") {
+            userCategory = "&category=23";
+            categoryDisplay.style.display = "none"
+            difficultyLevel()
+        } else if (allCategory.value === "&category=18") {
+            userCategory = "&category=18";
+            categoryDisplay.style.display = "none"
+            difficultyLevel()
+        }
+    })
+})
+
 // Difficulty level
 let userDifficulty = ""
 let difficultyLevel = function () {
     categoryDisplay.style.display = "none";
     difficultyDisplay.style.display = "flex";
-
-    document.querySelectorAll(".btn").forEach(difficulty => {
-        difficulty.addEventListener("click", () => {
-            if (difficulty.value === "&difficulty=easy") {
-                userDifficulty = "&difficulty=easy";
-                difficultyDisplay.style.display = "none"
-                gameDiv.style.display = "flex";
-                getDataAsync(userCategory, userDifficulty)
-            } else if (difficulty.value === "&difficulty=medium") {
-                userDifficulty = "&difficulty=medium";
-                difficultyDisplay.style.display = "none"
-                gameDiv.style.display = "flex";
-                getDataAsync(userCategory, userDifficulty)
-            } else if (difficulty.value === "&difficulty=hard") {
-                userDifficulty = "&difficulty=hard";
-                difficultyDisplay.style.display = "none"
-                gameDiv.style.display = "flex";
-                getDataAsync(userCategory, userDifficulty)
-            }
-        })
-    })
 }
+document.querySelectorAll(".btn").forEach(difficulty => {
+    difficulty.addEventListener("click", () => {
+        if (difficulty.value === "&difficulty=easy") {
+            userDifficulty = "&difficulty=easy";
+            difficultyDisplay.style.display = "none"
+            gameDiv.style.display = "flex";
+            getDataAsync(userCategory, userDifficulty)
+        } else if (difficulty.value === "&difficulty=medium") {
+            userDifficulty = "&difficulty=medium";
+            difficultyDisplay.style.display = "none"
+            gameDiv.style.display = "flex";
+            getDataAsync(userCategory, userDifficulty)
+        } else if (difficulty.value === "&difficulty=hard") {
+            userDifficulty = "&difficulty=hard";
+            difficultyDisplay.style.display = "none"
+            gameDiv.style.display = "flex";
+            getDataAsync(userCategory, userDifficulty)
+        }
+    })
+})
+
 // Getting data
 async function getDataAsync(category, difficulty) {
     let response = await fetch(`https://opentdb.com/api.php?amount=1${category}${difficulty}&type=multiple`)
@@ -167,12 +168,3 @@ let quit = function () {
 }
 quitBtn.addEventListener("click", quit)
 
-try {
-    getDataAsync
-    difficultyLevel
-    displayQuestion
-
-}
-catch (error) {
-    console.warn(error)
-}
