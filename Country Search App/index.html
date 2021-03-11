@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://bootswatch.com/4/superhero/bootstrap.min.css">
+    <link rel="stylesheet" href="./style/style.css" type="text/css">
+    <title>Pratice</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <a class="navbar-brand mb-0 h1" href="#" id="brand">Country Search App</a>
+        <div class="collapse navbar-collapse" id="navbarColor02">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#" id="showAll">Show all the countries</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="text" id="search" placeholder="Search">
+                <button class="btn btn-secondary my-2 my-sm-0" type="submit" id="searchBtn">Search</button>
+            </form>
+        </div>
+    </nav>
+
+    <div id="alert">
+    </div>
+
+    <table class="table table-hover" id="table">
+        <thead>
+            <tr  class="table-active">
+                <th scope="col">Flag</th>
+                <th scope="col" class="filter" id="nameSort">Name</th>
+                <th scope="col" class="filter" id="populationSort">Population</th>
+                <th scope="col">Capital</th>
+                <th scope="col" class="filter" id="areaSort">Area</th>
+                <th scope="col">Language</th>
+                <th scope="col">Currency</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody">
+
+        </tbody>
+    </table>
+
+    <div id="nextPreviousBtn">
+        <button type="button" class="btn btn-outline-success buttonsNextPrevious" id="previous">Previous</button>
+        <button type="button" class="btn btn-outline-success buttonsNextPrevious" id="next">Next</button>
+        <div id="pagingButtons"></div>
+        <div id="currnetPage"><p>currnet page - 1</p></div>
+    </div>
+
+    <script src="./script/script.js"></script>
+</body>
+
+</html>
