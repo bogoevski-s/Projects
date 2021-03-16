@@ -13,47 +13,62 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-        <a class="navbar-brand mb-0 h1" href="#" id="brand">Country Search App</a>
-        <div class="collapse navbar-collapse" id="navbarColor02">
-            <ul class="navbar-nav mx-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#" id="showAll">Show all the countries</a>
-                </li>
-            </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="text" id="search" placeholder="Search">
-                <button class="btn btn-secondary my-2 my-sm-0" type="submit" id="searchBtn">Search</button>
-            </form>
+        <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+                <a class="navbar-brand mb-0 h1" href="#" id="brand">Country Search <span class="text-light">App</span> </a>
+                <div class="collapse navbar-collapse" id="navbarColor02">
+                        <ul class="navbar-nav mx-auto">
+                                <li class="nav-item"> 
+                                        <a class="nav-link" href="#" id="showAll">Show all the countries</a>
+                                </li>
+                        </ul>
+                        <form class="form-inline my-2 my-lg-0">
+                                <input class="form-control mr-sm-2" type="text" id="search" placeholder="Search">
+                                <button class="btn btn-secondary my-2 my-sm-0" type="submit" id="searchBtn">Search</button>                
+                        </form>
+                </div>
+        </nav>
+
+        <div id="alert">
         </div>
-    </nav>
 
-    <div id="alert">
-    </div>
+        <img src="https://raw.githubusercontent.com/sedc-codecademy/skwd9-04-ajs/main/G1/class05%20-%20JediArchives/JediArchives/code/src/img/loader.gif"  class="center" id="loader">
 
-    <table class="table table-hover" id="table">
-        <thead>
-            <tr  class="table-active">
-                <th scope="col">Flag</th>
-                <th scope="col" class="filter" id="nameSort">Name</th>
-                <th scope="col" class="filter" id="populationSort">Population</th>
-                <th scope="col">Capital</th>
-                <th scope="col" class="filter" id="areaSort">Area</th>
-                <th scope="col">Language</th>
-                <th scope="col">Currency</th>
-            </tr>
-        </thead>
-        <tbody id="tableBody">
+        <table class="table table-hover" id="table">
+            <thead>
+                <tr  class="table-active">
+                    <th scope="col">Flag</th>
+                    <th scope="col" class="filter" id="nameSort">Name</th>
+                    <th scope="col" class="filter" id="populationSort">Population</th>
+                    <th scope="col">Capital</th>
+                    <th scope="col" class="filter" id="areaSort">Area</th>
+                    <th scope="col">Language</th>
+                    <th scope="col">Currency</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+    
+            </tbody>
+        </table>
+    
+        <div id="nextPreviousBtn">
+            <button type="button" class="btn btn-outline-success buttonsNextPrevious" id="previous">Previous</button>
+            <button type="button" class="btn btn-outline-success buttonsNextPrevious" id="next">Next</button>
+            <div id="currnetPage"><p>Page - 1</p></div>
+        </div>
 
-        </tbody>
-    </table>
 
-    <div id="nextPreviousBtn">
-        <button type="button" class="btn btn-outline-success buttonsNextPrevious" id="previous">Previous</button>
-        <button type="button" class="btn btn-outline-success buttonsNextPrevious" id="next">Next</button>
-        <div id="pagingButtons"></div>
-        <div id="currnetPage"><p>currnet page - 1</p></div>
-    </div>
+
+
+    <!-- dependencies -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" 
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
 
     <script src="./script/script.js"></script>
 </body>

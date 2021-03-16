@@ -4,18 +4,22 @@
     font-weight: 500;
     text-align: center;
 }
+body {
+    background: -webkit-gradient(linear, left top, left bottom, from(#008fb3), to(#ffe1e19c)) fixed;
+}
 #brand{
     color: rgb(0, 255, 255);
 }
 #table {
     display: none;
     margin-top: 50px;
+    color: black;
 }
 tr td img{
     width: 35px;
 }
 #showAll:hover{
-    color: cyan;
+    color: #bfffff;
 }
 #alert{
     margin-top: -10px;
@@ -28,7 +32,6 @@ tr td img{
     border-bottom-left-radius: 15px;
 }
 .buttonsNextPrevious {
-    /* display: none; */
     width: 150px;
     margin: 10px 20px;
 }
@@ -36,11 +39,22 @@ tr td img{
     display: none;
 }
 #next{
-    display: none;
+    display: inline;
 }
 #currnetPage{
-    display: none;
+    display: inline;
+    color: black;
 }
 .filter {
     cursor: pointer;
+}
+.filter:hover{
+    color: rgb(0, 255, 255);
+    text-shadow: 1px 1px 4px black;
+}
+#loader{
+    position: relative;
+    height: 10vh;
+    left: 45%;
+    display: none;
 }

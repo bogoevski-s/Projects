@@ -4,48 +4,53 @@ let uiService = {
     table: document.getElementById("table"),
     tableBody: document.getElementById("tableBody"),
     showAllButton: document.getElementById("showAll"),
+    loader: document.getElementById("loader"),
+    buttonDiv: document.getElementById("nextPreviousBtn"),
 
     search: function () {
-        uiService.button.addEventListener("click", (e) => {
+        uiService.button.addEventListener("click", function (e) {
             e.preventDefault()
-            let country = uiService.searchInput.value
-            if (country === "") {
-                uiService.showAlert('Please fill in Search field', 'danger')
-            } else {
-                countriesApiService.getData(country)
+            if (uiService.searchInput.value === "") {
+                uiService.showAlert('Please fill in Search field', 'danger');
+                uiService.searchInput.value = ""
+                return
             }
+            uiService.buttonDiv.style.display = "none"
+            let nameSearch = countriesApiService.cashedData.filter((countries) => {
+                if (countries.name.toLowerCase().indexOf(uiService.searchInput.value.toLowerCase()) > -1) {
+                    tableBody.innerHTML += `
+                    <tr>
+                        <td><img src="${countries.flag}"></td>
+                        <td>${countries.name}</td>
+                        <td>${countries.population}</td>
+                        <td>${countries.capital}</td>
+                        <td>${countries.area} Km2</td>
+                        <td>${countries.languages[0].name}</td>
+                        <td>${countries.currencies[0].name} - ${countries.currencies[0].symbol}</td>
+                    </tr>
+                    `
+                    return countries
+                }
+            })
+            uiService.showAll(nameSearch)
             uiService.searchInput.value = ""
         })
         uiService.showAllButton.addEventListener("click", () => {
+            uiService.searchInput.value = ""
+            uiService.buttonDiv.style.display = "block"
             pagingService.from = 0
             pagingService.to = 10
             pagingService.page = 1
             pagingService.totalPages = 0
             pagingService.currentPageContainer.innerHTML = `<p>currnet page - ${pagingService.page}</p>`;
             countriesApiService.getAllData()
+            pagingService.previousPage.style.display = "none"
             pagingService.nextPage.style.display = "inline"
             pagingService.currentPageContainer.style.display = "inline"
         })
     },
-    showCountries: function (data) {
-        pagingService.nextPage.style.display = "none"
-        pagingService.currentPageContainer.style.display = "none"
-        pagingService.previousPage.style.display = "none"
-
-        table.style.display = "inline-table"
-        tableBody.innerHTML = `
-        <tr>
-            <td><img src="${data.flag}"></td>
-            <td>${data.name}</td>
-            <td>${data.population}</td>
-            <td>${data.capital}</td>
-            <td>${data.area} Km2</td>
-            <td>${data.languages[0].name}</td>
-            <td>${data.currencies[0].name} - ${data.currencies[0].symbol}</td>
-        </tr>
-        `
-    },
     showAlert: function (message, className) {
+        uiService.loader(false)
         const div = document.getElementById("alert")
         div.style.display = "block"
         div.className = `alert alert-${className}`
@@ -70,9 +75,13 @@ let uiService = {
             </tr>
             `
         }
+
+    },
+    loader: function (toggle) {
+        if (toggle) loader.style.display = "block";
+        else loader.style.display = "none"
     }
 }
-
 let pagingService = {
     previousPage: document.getElementById("previous"),
     nextPage: document.getElementById("next"),
@@ -84,6 +93,7 @@ let pagingService = {
     totalPages: 0,
     pagingListeneres: function () {
         this.previousPage.addEventListener("click", function () {
+            uiService.loader(true)
             if (pagingService.page > 1) {
                 pagingService.from -= 10
                 pagingService.to -= 10
@@ -93,6 +103,7 @@ let pagingService = {
             countriesApiService.getAllData()
         })
         this.nextPage.addEventListener("click", function () {
+            uiService.loader(true)
             if (pagingService.page < pagingService.totalPages) {
                 pagingService.from += 10
                 pagingService.to += 10
@@ -115,79 +126,85 @@ let pagingService = {
     },
     setTotalPages: function (list) {
         pagingService.totalPages = Math.ceil(list.length) / 10
-    },
-    createPagingButtons: function () {
-        pagingService.pagingButtonsContainer.innerHTML = ""
-        for (let i = 0; i < pagingService.totalPages; i++) {
-            pagingService.pagingButtonsContainer.innerHTML = `
-                <button class="btn btn-outline-success buttonsNextPrevious" id="page${i + 1}">${i + 1}</button>
-            `
-        }
-        for (let i = 0; i < pagingService.totalPages; i++) {
-            document.getElementById(`page${i + 1}`).addEventListener("click", function () {
-                pagingService.from = i * 10;
-                pagingService.to = (i + 1) * 10;
-                pagingService.page = i + 1
-                pagingService.adaptPageButtons()
-                countriesApiService.getAllData()
-            })
-        }
     }
 }
-
-let filterSearch = {
+let sortSearch = {
     directionAB: true,
-    buttonsListeners: function () {
-        document.querySelectorAll(".filter").forEach(item => {
-            item.addEventListener("click", () => {
-                // console.log(`${item.textContent} is clicked`)
-                // console.log(countriesApiService.cashedData)
-                if (filterSearch.directionAB === true) {
-                    countriesApiService.cashedData.sort(function (a, b) {
-                        if (a.name < b.name) return -1;
-                    })
-                    filterSearch.directionAB = false;
-                }
-                else if (filterSearch.directionAB === false) {
-                    countriesApiService.cashedData.sort(function (a, b) {
-                        filterSearch.directionAB = true;
-                        if (a.name > b.name) return -1;
-                    })
-                }
-                uiService.showAll(countriesApiService.cashedData, pagingService.from, pagingService.to)
-            })
+    sortByName: function () {
+        document.getElementById("nameSort").addEventListener("click", () => {
+            if (sortSearch.directionAB === true) {
+                countriesApiService.cashedData.sort(function (a, b) {
+                    if (a.name < b.name) return -1;
+                })
+                sortSearch.directionAB = false;
+            }
+            else if (sortSearch.directionAB === false) {
+                countriesApiService.cashedData.sort(function (a, b) {
+                    sortSearch.directionAB = true;
+                    if (a.name > b.name) return -1;
+                })
+            }
+            uiService.showAll(countriesApiService.cashedData)
+        })
+    },
+    sortByPopulation: function () {
+        document.getElementById("populationSort").addEventListener("click", () => {
+            if (sortSearch.directionAB === true) {
+                countriesApiService.cashedData.sort(function (a, b) {
+                    if (a.population < b.population) return -1;
+                })
+                sortSearch.directionAB = false;
+            }
+            else if (sortSearch.directionAB === false) {
+                countriesApiService.cashedData.sort(function (a, b) {
+                    sortSearch.directionAB = true;
+                    if (a.population > b.population) return -1;
+                })
+            }
+            uiService.showAll(countriesApiService.cashedData)
+        })
+    },
+    sorthByArea: function () {
+        document.getElementById("areaSort").addEventListener("click", () => {
+            if (sortSearch.directionAB === true) {
+                countriesApiService.cashedData.sort(function (a, b) {
+                    if (a.area < b.area) return -1;
+                })
+                sortSearch.directionAB = false;
+            }
+            else if (sortSearch.directionAB === false) {
+                countriesApiService.cashedData.sort(function (a, b) {
+                    sortSearch.directionAB = true;
+                    if (a.area > b.area) return -1;
+                })
+            }
+            uiService.showAll(countriesApiService.cashedData)
         })
     }
 }
-
 let countriesApiService = {
     cashedData: null,
-    getData: async function (name) {
+    getAllData: async function () {
         try {
-            let response = await fetch(`https://restcountries.eu/rest/v2/name/${name}?fullText=true`)
-            let data = await response.json()
-            countriesApiService.cashedData = data[0];
-            uiService.showCountries(countriesApiService.cashedData)
+
+            let res = await fetch("https://restcountries.eu/rest/v2/all")
+            let dataAll = await res.json()
+            countriesApiService.cashedData = dataAll
+            uiService.showAll(countriesApiService.cashedData, pagingService.from, pagingService.to)
+            pagingService.setTotalPages(countriesApiService.cashedData)
         }
         catch (error) {
-            uiService.showAlert(`Sorry we found nothing about "${name}"`, 'warning')
-            console.log("somting went worng")
+            uiService.showAlert(`Sorry something went wrong`)
             console.log(error)
         }
-    },
-    getAllData: async function () {
-        let res = await fetch("https://restcountries.eu/rest/v2/all")
-        let dataAll = await res.json()
-        countriesApiService.cashedData = dataAll
-
-        uiService.showAll(countriesApiService.cashedData, pagingService.from, pagingService.to)
-        pagingService.setTotalPages(countriesApiService.cashedData)
-    },
+        finally {
+            uiService.loader(false)
+        }
+    }
 }
-
+countriesApiService.getAllData()
 uiService.search()
 pagingService.pagingListeneres()
-filterSearch.buttonsListeners()
-
-
-
+sortSearch.sortByName()
+sortSearch.sortByPopulation()
+sortSearch.sorthByArea()
