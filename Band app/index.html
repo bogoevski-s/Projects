@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css">
+    <link rel="stylesheet" href="./style/style.css" type="text/css">
+    <title>Band List</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <h1 class="navbar-brand">Band<span class="text-info">App</span> </h1>
+
+        <ul class="navbar-nav mr-auto nav-fill w-100">
+            <li class="nav-item">
+                <a class="nav-link btn-lg" id="showAllBands">Show all bands</a>
+            </li>
+
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="activeBands">
+                <label class="custom-control-label" for="activeBands">All active bands</label>
+            </div>
+
+            <li class="nav-item dropdown">
+                <select name="tags" id="dropdown">
+                    <option value="" selected="true" disabled="disabled" id="dropdownLabel">Choose a genre tag:</option>
+                </select>
+            </li>
+        </ul>
+        <input class="form-control mr-sm-2" type="text" placeholder="Search" id="searchBox">
+        <button class="btn btn-outline-info my-2 my-sm-0" id="searchBtn">Search</button>
+    </nav>
+
+
+    <table class="table table-striped table-hover table-dark">
+        <thead>
+            <tr id="theadRow">
+                <th>No.</th>
+                <th id="sortName" class="sort">Name</th>
+                <th>Active</th>
+                <th>Tags</th>
+                <th>Members</th>
+                <th id="sortAlbums" class="sort">Albums</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody">
+
+        </tbody>
+    </table>
+    <div id="nextPreviousBtn">
+        <button type="button" class="btn btn-outline-success buttonsNextPrevious" id="previous">Previous</button>
+        <button type="button" class="btn btn-outline-success buttonsNextPrevious" id="next">Next</button>
+        <div id="currnetPage"><p>Page - <span id="numPage">1</span></p></div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <script src="./script/script.js"></script>
+
+</body>
+
+</html>

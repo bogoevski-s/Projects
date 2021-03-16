@@ -1,0 +1,79 @@
+body{
+    background-color: rgb(52, 58, 64);
+}
+*{
+    text-align: center;
+    font-size: 1rem;
+}
+.container{
+    display: inline-block;
+    box-sizing: border-box;
+}
+.btn-outline-secondary{
+    float: right;
+}
+.form-control{
+    width: 300px;
+    display: inline-block;
+}
+.custom-control{
+    margin-top: 14px;
+}
+.nav-link {
+    cursor: pointer;
+}
+.custom-control-label{
+    color: rgba(255,255,255,.5);
+    font-size: 14px;
+}
+.table td, .table th{
+    vertical-align: middle;
+}
+.dropdown label {
+    display: block;
+    color: rgba(255,255,255,.5);
+    font-size: 14px;
+    width: 300px;
+}
+#dropdown{
+    color: rgba(255,255,255,.5);
+    font-size: 20px;
+    margin-top: 8px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+#dropdown option{
+    color: rgb(255, 255, 255);
+    background-color: rgb(52, 58, 64);
+    margin: 50px auto;
+}
+th{
+    color: #1f9bcf;
+    font-size: 1.1rem;
+}
+.tableColor {
+    font-size: 1.2rem; 
+}
+#tableName{
+    color: rgb(0, 195, 255);
+    font-size: 1.3rem;
+}
+#sortName, #sortAlbums{
+    cursor: pointer;
+}
+#sortName:hover, #sortAlbums:hover{
+    color: white;
+}
+#previous{
+    display: none;
+}
+#currnetPage{
+    color: rgb(255, 255, 255);
+    font-size: 1.2rem;
+}
+#numPage{
+    color: #4bbf73;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
