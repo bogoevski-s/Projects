@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style/survey-style.css">
+    <title>Form</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- mainWrapper -->
+
+    <div class="mainWrapper" id="mainDiv">
+
+            <!-- Header -->
+        <div class="header" >
+            <header>
+                <h1>SECD Academy Application</h1>
+            </header>
+        </div>
+            <!-- Form -->
+        <div class="formbox">
+            <form id="formMain" class="opa" onsubmit="event.preventDefault();">
+                <!-- First name Last name -->
+                <div class="form-group">        
+                    <label class="fistlast" for="name"><span>First and Last name</span></label>
+                    <input type="text" placeholder="Name" id="name" name="FirsLastName" required min="3">
+                </div>
+                <!-- Age -->
+                <div class="form-group">
+                    <label class="fistlast" for="age"><span>Your age</span></label>
+                    <input type="number" placeholder="Age" id="age" name="age" required  max="99">
+                </div>
+                <!-- Gender -->
+                <div class="form-group" class="gender">   
+                    <p><span>Gender</span></p>
+                    <input type="radio" id="gender" value="male" name="gender">
+                    <label for="gender" id="genderLabelMale">Male</label><br>
+                    <input type="radio" id="female" value="female" name="gender">
+                    <label for="female" id="genderLabelFemale">Female</label>
+                </div>
+                <!-- Date of birth -->
+                <div class="form-group">   
+                    <label for="date" ><span>Date of birth</span></label><br>
+                    <input type="date" id="date" >
+                </div>
+                <!-- E-mail -->
+                <div class="form-group">   
+                    <label for="email" ><span>E-mail address</span></label><br>
+                    <input type="email" placeholder="Email" id="email" name="email" required min="4">
+                </div>
+                <!-- Phone number -->
+                <div class="form-group">   
+                    <label for="phone"><span>Your Phone number</span></label>
+                    <input type="tel" id="phone" name="phonenumber" min="8" required placeholder="Phone number">
+                </div>
+                <!-- Address -->
+                <div class="form-group">   
+                    <label class="" for="address"><span>Address</span></label>
+                    <input type="text" placeholder="Address" id="address" name="address" required min="3">
+                </div>
+                <!-- City -->
+                <div class="form-group">   
+                    <label class="" for="city"><span>City</span></label>
+                    <input type="text" placeholder="City" id="city" name="city" required min="3">
+                </div>
+                <!-- Academy -->
+                <div class="form-group">
+                    <label for="academy"><span> Select Academy</span></label>    
+                        <select name="academy" id="academy">
+                            <option class="options" value="" selected disabled>Select an option</option>
+                            <option class="options" value="programing" >Academy for programing</option>
+                            <option class="options" value="computer-networks">Academy for computer networks</option>
+                            <option class="options" value="desing">Academy for desing</option>
+                            <option class="options" value="software-testing">Academy for software testing</option>
+                            <option class="options" value="data-science">Academy for data science</option>
+                            <option class="options" value="digital-marketing">Academy for digital marketing</option>
+                        </select>
+                </div>
+                <!-- payment -->
+                <div class="form-group">
+                    <span class="fistlast" id="selectpay">Select payment</span>
+                    <!-- <p>Select Payment</p> -->
+                    <input type="radio" id="cash" value="cash" name="payment">
+                    <label for="cash" id="payCash">Cash</label><br>
+                    <input type="radio" id="credit" value="CreditCard" name="payment">
+                    <label for="credit" id="payCard">Credit Card</label>
+                </div>
+                <!-- Education -->
+                <div class="form-group" id="education">
+                        <span class="fistlast">Degree of education</span>
+                    <div class="one">
+                        <input type="radio" id="high" value="high-school" name="Education">
+                        <label for="high" id="highSchoolLabel">High School Diploma</label>
+                    </div>
+                    <div class="one">
+                        <input type="radio" id="bachel" value="Bachelor-Diploma" name="Education">
+                        <label for="bachel" id="bachelLabel">Bachelor's Diploma</label>
+                    </div>
+                    <div class="one">
+                        <input type="radio" id="master" value="Master-Diploma" name="Education">
+                        <label for="master"  id="masterLabel">Master's Diploma</label>
+                    </div>
+                    <div class="one">
+                        <input type="radio" id="doc" value="Doctorate-Diploma" name="Education">
+                        <label for="doc" id="docLabel">Doctorate's Diploma</label>
+                    </div>
+                </div>
+                <!-- Status -->
+                <div class="form-group" id="statusbox">
+                    <span class="fistlast">Status</span>
+                    <div class="two">
+                        <input type="radio" id="employe" value="employmed" name="status">
+                        <label for="employe" id="employeLabel">Employmed</label>
+                    </div>
+                    <div class="two">
+                        <input type="radio" id="unemploye" value="unemploymed" name="status">
+                        <label for="unemploye" id="unemployeLabel">Unemploymed</label>
+                    </div>
+                    <div class="two">
+                        <input type="radio" id="student" value="Student" name="status">
+                        <label for="student" id="studentLabel">Student</label>
+                    </div>
+                </div>
+                <!-- How you find out -->
+                <div class="form-group" class="howfinout">
+                    <span class="fistlast">How did you find out about SEDC Academies?</span>
+                    <div class="three">
+                        <input type="checkbox" name="social" id="socialInput" value="Social-Media">
+                        <label for="social" class="how">Social Media</label>
+                    </div>
+                    <div class="three">
+                        <input type="checkbox" name="web" id="webInput" value="website">
+                        <label for="web" class="how">Web site</label>
+                    </div>
+                    <div class="three">
+                        <input type="checkbox" name="ads" id="adsInput" value="Advertising">
+                        <label for="ads" class="how">Advertising</label>
+                    </div>
+                    <div class="three">
+                        <input type="checkbox" name="friends" id="friendsInput" value="Friends">
+                        <label for="friends" class="how">Friends</label>
+                    </div>
+                    <div class="three">
+                        <input type="checkbox" name="other"  id="otherInput" value="other">
+                        <label for="findout" class="how">Other</label>
+                    </div>
+                </div>
+                <!-- Comments -->
+                <div class="form-group">
+                    <label class="fistlast" id="comment" for="review"><span >Any comments or suggestions?</span></label>
+                    <textarea name="reviewBox" id="review" cols="60" rows="10"></textarea>
+                </div>
+                <!-- Button -->
+                <div class="form-group">
+                    <button id="submitBtn">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div id="submitDiv">
+        
+    </div>
+
+    <script src="./script/script.js"></script>
+</body>
+</html>

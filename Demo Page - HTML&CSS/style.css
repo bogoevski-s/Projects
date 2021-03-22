@@ -1,0 +1,245 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	background-color: #eeeeee;/* #24252A;white */ 
+}
+li, a, button {
+	font-family: "Montserrat", sans-serif;
+	font-weight: 700;
+	font-size: 18px;
+	color: #a5a5a5 ;  /* #d4d4d4  #787878   #edf0f1  #4d4d4d*/
+	text-decoration: none;
+}
+header {
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 30px 10%;
+}
+.logo {
+	cursor: pointer;
+}
+.nav-links {
+	padding: 10px 150px;
+	list-style: none;
+	/* border:1px solid white; */ 
+	border-radius: 20px;
+	box-shadow: 
+		-8px -8px 8px 0 rgba(255,255,255,0.7),
+		8px 8px 8px 0 rgba(0,0,0,.07);
+}
+.nav-links li {
+	transition: all 0.3s ease 0s;
+	display: inline-block;
+	padding: 0 20px;
+}
+.nav-links li a {
+	transition: all 0.3s ease 0s;
+	padding-bottom: 2px;
+}
+.nav-links li a:hover {
+	color: #E39002; /* #0088a9  */
+	text-shadow: 0.3px 0.3px 0.3px #d4d4d4; 
+}
+button {
+	padding: 10px 25px;
+	background-color: #eeeeee; /* rgba(0,136,169,1);  E39002*/
+	border: none;
+	border-radius: 50px;
+	cursor: pointer;
+	transition: all 0.3s ease 0s;
+	box-shadow: 
+		-8px -8px 8px 0 rgba(255,255,255,0.7),
+		8px 8px 8px 0 rgba(0,0,0,.07);
+}
+button:hover {
+	color: #E39002;
+}
+.dark {
+	position: absolute;
+	right: 1%;
+	width: 15px;
+	height: 40px;
+}
+.dark i {
+	background: transparent;
+	position: absolute;
+	top: 28%;
+	left: 33%;
+	height:50%;
+}
+.dark:hover{
+	color: #ffffff;
+	background-color: #5c5c5c;
+	box-shadow: 
+		-6px -6px 6px 0 rgba(255,255,255,1.9),
+		12px 12px 12px 0 rgba(0,0,0,.15);
+}
+
+/* KTM Background Image */
+
+.photo {
+	background: url("./ktm/new-duke1122345.png") center center;
+	background-repeat: no-repeat;
+	position: relative;
+	display: block;
+	height: 100vh;
+	width: 100%;
+	margin-left:0;
+	margin-right: 0;
+	margin-top:30px;
+}
+.motoktm {
+	
+	background: transparent;
+	width: 85%;
+	height: 90%;
+	position: absolute;
+	right: 20%;
+	top: 10px;
+}
+
+/* Social Buttons */
+
+.social {
+	float: left;
+	background: transparent;
+	position: absolute;
+	top: 40%;
+	transform: translateY(-30%);
+	width: 100%;
+	text-align: center;
+}
+.btn {
+	display: block;
+	position: relative;
+	width: 90px;
+	height: 90px;
+	background: #f1f1f1;
+	margin: 10px;
+	border-radius: 50%;
+	/* box-shadow: 0 15px 15px -5px #00000070; */
+	box-shadow: 
+		-6px -6px 6px 0 rgba(255,255,255,0.9),
+		6px 6px 6px 0 rgba(0,0,0,.09);
+	color: #b1b0b0;
+	overflow: hidden;
+}
+.btn i{
+	line-height: 90px;
+	font-size: 26px;
+	transition: 0.15s linear;
+}
+.btn:hover i{
+	transform: scale(1.8);
+	color: #f1f1f1;
+	background: transparent; 
+}
+.btn::before{
+	content:"";
+	position: absolute;
+	width: 120%;
+	height: 120%;
+	background: #EE9012;  /*#3498db*/
+	transform: rotate(45deg);
+	left: -110%;
+	top: 90%;
+
+}
+.btn:hover::before{
+	animation: aaa 0.95s 1;
+	top: -10%;
+	left: -10%;
+}
+@keyframes aaa {
+	0%{
+		left: -110%;
+		top: 90%;
+	}50%{
+		left: 10%;
+		top: -30%;
+	}100%{
+		top: -10%;
+		left: -10%;
+	}
+}
+
+/* Dark Mode */
+
+
+.dakrMode {
+	background-color: #3F3C3C;
+	transition: 0.5s linear;
+}
+*.active .social{
+	background: transparent;
+	
+}
+*.active .photo {
+	background-image: url("ktmDuke390-112.png");
+	background-repeat: no-repeat;
+	position: relative;
+	display: block;
+	height: 100vh;
+	margin-left: 0;
+	margin-right:0;
+	margin-top:30px;
+} 
+*.active .photo .motoktm  {
+	background: transparent;
+} 
+*.active .social .btn {
+	display: block;
+	position: relative;
+	width: 90px;
+	height: 90px;
+	margin: 10px;
+	border-radius: 50%;
+	box-shadow: 
+		-4px -4px 4px 0 rgba(255,255,255,0.3),
+		4px 4px 4px 0 rgba(0,0,0,.3);
+	color: #f7f7f7; 
+	overflow: hidden;
+}
+*.active .nav-links {
+	padding: 10px 150px;
+	list-style: none;
+	border-radius: 20px;
+	box-shadow: 
+		-4px -4px 4px 0 rgba(255,255,255,0.3),
+		4px 4px 4px 0 rgba(0,0,0,.3);
+}
+*.active .nav-links li a {
+	color: #ededed;
+}
+*.active .nav-links li a:hover {
+	color: #E39002; 
+	text-shadow: none; 
+}
+*.active button {
+	color: #ededed;
+	box-shadow: 
+		-4px -4px 4px 0 rgba(255,255,255,0.3),
+		4px 4px 4px 0 rgba(0,0,0,.3);
+}
+*.active button:hover {
+	transition: none;
+	color: #E39002;
+	background: none;
+}
+*.active .dark:hover{
+	color: #3F3C3C;
+	transition: none;
+	background-color: #ededed;
+	box-shadow: 
+		-4px -4px 4px 0 rgba(255,255,255,0.3),
+		 4px  4px  4px 0 rgba(0,0,0,.3);
+}
+*.active .dark i {
+	transition: none;
+}
+*.active .dark i:hover {
+	transition: none;
+}  

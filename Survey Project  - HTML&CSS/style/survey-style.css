@@ -1,0 +1,356 @@
+html, body {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin: 0;
+    padding: 0;
+  }
+html {
+
+    background: url("../images/photo-8.jpg") no-repeat ;
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100%;
+}
+.mainWrapper {
+    position: relative;
+    display: block;
+    width: 50%;
+    height: 100%;
+    margin: 30px auto;
+    box-sizing: border-box; 
+}
+#submitDiv{
+    display: none;
+}
+.header {
+    display: block;
+    text-align: center;
+    border-radius: 15px;
+    background: transparent;
+    margin-bottom: 10px;
+}
+.formbox {
+    position: relative;
+    border-radius: 15px;
+    display: block;
+    
+}
+.opa {
+    position: relative;
+    z-index: 1;
+}
+.opa:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(209, 209, 209);
+    opacity: .4;
+    border-radius: 10px;
+}
+form {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+    margin: 0px;
+    border: 4px solid rgb(58, 58, 58);
+    border-radius: 15px;
+    
+}
+label {
+    color: black;
+    display: block;
+    font-weight: 400;
+}
+.form-group {
+    color: black;
+    border-radius: 15px;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    margin: 0px;
+    margin: 60px 0px;
+    text-align: center;
+    display: block;
+    box-sizing: border-box;
+}
+.fistlast {
+    position: relative;
+    color: rgb(0, 0, 0);
+    margin: 0px;
+    display: block;
+    padding: 110px auto;
+    outline: none;
+}
+input {
+    width: 30%;
+    border: none;
+    border-bottom: 2px solid black;
+    background: transparent;
+    margin: 5px auto;
+    display: block;
+    outline: none;
+    padding: 5px;
+    box-sizing: border-box;
+    transition: 0.5s;
+}
+input#age {
+    width: 10%;
+}
+input#age:active, input#age:focus {
+    border-bottom: 2px solid rgb(255, 0, 0);
+    width: 15%;
+}
+input#date {
+    transition: 1s ease-out;
+}
+input#date:active, input#date:focus {
+    border-bottom: 2px solid rgb(255, 0, 0);
+    width: 30%;
+}
+input:active, input:focus, input:focus{
+    border-bottom: 2px solid rgb(255, 0, 0);
+    width: 35%;
+}
+label#genderLabelMale {
+    position: absolute;
+    display: inline-block;
+    margin: 0px;
+    margin-left: -20px;
+    padding: 0;
+    
+}
+label#genderLabelFemale {
+    position: absolute;
+    display: inline-block;
+    margin: 0px;
+    margin-left: -20px;
+    padding: 0;
+    
+}
+input#gender, #female {
+    position: relative;
+    left: -30px;
+    width: auto;
+    height: auto;
+    display: inline-block;
+    border: none;
+    margin: 0px;
+    padding: 0px;
+    padding-left: 0px;
+    transition: none;
+}
+input#female {
+    margin-bottom: 20px;
+}
+p {
+    margin-bottom: 10px;
+}
+.gender {
+    position: absolute;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+label#email {
+    display: inline;
+}
+label#date {
+    display: inline;
+}
+label#payCash {
+    position: absolute;
+    display: inline-block;
+    margin: 0px;
+    margin-left: -20px;
+    padding: 0;
+    
+}
+label#payCard {
+    position: absolute;
+    display: inline-block;
+    margin: 0px;
+    margin-left: -20px;
+    padding: 0;
+    
+}
+input#cash, #credit {
+    position: relative;
+    left: -50px;
+    width: auto;
+    height: auto;
+    display: inline-block;
+    border: none;
+    margin: 0px;
+    padding: 0px;
+    padding-left: 0px;
+    transition: none;
+}
+input#credit {
+    margin-bottom: 20px;
+}
+#selectpay {
+    margin: 20px;
+}
+#academy {
+    margin-bottom: 65px;
+}
+span {
+    color: black;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+label#highSchoolLabel, #bachelLabel, #masterLabel, #docLabel {
+    float: left;
+}
+input#high, #bachel, #master, #doc {
+    width: 10%;
+    margin: 5px auto;
+    margin-left: -40px;
+    outline: none;
+    padding: 5px;
+    box-sizing: border-box;
+    transition: none;
+    float: left;
+}
+#educatioon {
+    border-radius: 0px;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    margin: 0px;
+    margin: 0px 0px;
+    display: block;
+    box-sizing: border-box;
+}
+.one {
+    height: 100%;
+    display: block;
+    padding: 5px;
+    margin: 30px auto;
+    margin-left: 40%;
+}
+label#employeLabel, #unemployeLabel, #studentLabel {
+    float: left;
+}
+input#employe, #unemploye, #student {
+    width: 10%;
+    margin: 5px auto;
+    margin-left: -40px;
+    outline: none;
+    padding: 5px;
+    box-sizing: border-box;
+    transition: none;
+    float: left;
+}
+#statusbox {
+    border-radius: 0px;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    margin: 0px;
+    margin: 0px 0px;
+    display: block;
+    box-sizing: border-box;
+}
+.two {
+    height: 100%;
+    display: block;
+    padding: 5px;
+    margin: 30px auto;
+    margin-left: 45%;
+}
+
+label.how {
+    float: left;
+}
+input#socialInput, #webInput, #adsInput, #friendsInput, #otherInput {
+    width: 10%;
+    margin: 5px auto;
+    margin-left: -40px;
+    outline: none;
+    padding: 5px;
+    box-sizing: border-box;
+    transition: none;
+    float: left;
+}
+#howfinout {
+    border-radius: 0px;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    margin: 0px;
+    margin: 0px 0px;
+    display: block;
+    box-sizing: border-box;
+}
+.three {
+    height: 100%;
+    display: block;
+    padding: 5px;
+    margin: 30px auto;
+    margin-left: 45%;
+}
+#comment {
+    margin-bottom: 40px;
+    padding-top: 30px;
+}
+#review {
+    position: relative;
+    background:transparent;
+    border: transparent;
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px 1px black;
+    font-size: 1.2rem;
+    font-weight: 500;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 70%;
+}
+::-webkit-input-placeholder {
+    text-align: center;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+ }
+ #review:active, #review:focus {
+    color: black;
+    border: transparent;
+    background-color: whitesmoke;
+    opacity: 0.6; 
+}
+select {
+    font-family: Arial, Helvetica, sans-serif;
+    background: transparent;
+    font-size: 0.9rem; 
+}
+button {
+    width: 30%;
+    background: transparent;
+    color: #161616;
+    border: 2px solid black;
+    padding: 1em 2em;
+    margin: 30px;
+    font-size: 1.2em;
+    transition: 0.4s;
+    font-weight: bold;
+}
+button:hover {
+    border-color: #000000;
+    text-shadow: 0px 3px 7px rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    box-shadow: 0 0.9em 0.8em -1em #0a0a0a;
+    border: 2px solid black; 
+    border-radius: 15px;
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+
