@@ -1,38 +1,3 @@
-/*
-let movies = [`The Shawshank Redemption`,`The Godfather `,`Schindler's List`];
-
-function what(){
-    let select = parseInt(prompt(`Your favourite movies \n 1.Add \n 2.Delete \n 3.View list \n 4.Exit`))
-    if(select === 1){
-        add();
-    }else if(select === 2){
-        extract();
-    }else if(select === 3){
-        view();
-    }
-}
-
-function add(){
-    movies.push(prompt(`Enter movie`));
-    alert(movies);
-    alert(`${movies.length} movies`);
-    console.log(movies);
-    what();
-}
-function extract(){
-    movies.pop();
-    alert(movies);
-    alert(`${movies.length} movies`);
-    console.log(movies);
-    what();
-}
-function view(){
-    alert(`${movies} \n ${movies.length} movies`);
-    what();
-}
-what();
-*/
-
 let balance = 1000;
 let player = [];
 
