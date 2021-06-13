@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>Models</id>
+    <version>1.0.0</version>
+    <authors>Models</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Package Description</description>
+    <dependencies>
+      <group targetFramework="net5.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="D:\slave\Visual Studio\C# Basic\CSharp-SEDC-TasksAndExercices\Class 02 Advance Invoice App\Models\bin\Debug\net5.0\Models.dll" target="lib\net5.0\Models.dll" />
+  </files>
+</package>

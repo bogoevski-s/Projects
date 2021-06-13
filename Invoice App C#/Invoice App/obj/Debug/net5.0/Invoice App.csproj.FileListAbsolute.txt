@@ -1,0 +1,19 @@
+D:\slave\Visual Studio\C# Basic\CSharp-SEDC-TasksAndExercices\Class 02 Advance Invoice App\Invoice App\bin\Debug\net5.0\Invoice App.exe
+D:\slave\Visual Studio\C# Basic\CSharp-SEDC-TasksAndExercices\Class 02 Advance Invoice App\Invoice App\bin\Debug\net5.0\Invoice App.deps.json
+D:\slave\Visual Studio\C# Basic\CSharp-SEDC-TasksAndExercices\Class 02 Advance Invoice App\Invoice App\bin\Debug\net5.0\Invoice App.runtimeconfig.json
+D:\slave\Visual Studio\C# Basic\CSharp-SEDC-TasksAndExercices\Class 02 Advance Invoice App\Invoice App\bin\Debug\net5.0\Invoice App.runtimeconfig.dev.json
+D:\slave\Visual Studio\C# Basic\CSharp-SEDC-TasksAndExercices\Class 02 Advance Invoice App\Invoice App\bin\Debug\net5.0\Invoice App.dll
+D:\slave\Visual Studio\C# Basic\CSharp-SEDC-TasksAndExercices\Class 02 Advance Invoice App\Invoice App\bin\Debug\net5.0\ref\Invoice App.dll
+D:\slave\Visual Studio\C# Basic\CSharp-SEDC-TasksAndExercices\Class 02 Advance Invoice App\Invoice App\bin\Debug\net5.0\Invoice App.pdb
+D:\slave\Visual Studio\C# Basic\CSharp-SEDC-TasksAndExercices\Class 02 Advance Invoice App\Invoice App\bin\Debug\net5.0\Models.dll
+D:\slave\Visual Studio\C# Basic\CSharp-SEDC-TasksAndExercices\Class 02 Advance Invoice App\Invoice App\bin\Debug\net5.0\Models.pdb
+D:\slave\Visual Studio\C# Basic\CSharp-SEDC-TasksAndExercices\Class 02 Advance Invoice App\Invoice App\obj\Debug\net5.0\Invoice App.csprojAssemblyReference.cache
+D:\slave\Visual Studio\C# Basic\CSharp-SEDC-TasksAndExercices\Class 02 Advance Invoice App\Invoice App\obj\Debug\net5.0\Invoice App.GeneratedMSBuildEditorConfig.editorconfig
+D:\slave\Visual Studio\C# Basic\CSharp-SEDC-TasksAndExercices\Class 02 Advance Invoice App\Invoice App\obj\Debug\net5.0\Invoice App.AssemblyInfoInputs.cache
+D:\slave\Visual Studio\C# Basic\CSharp-SEDC-TasksAndExercices\Class 02 Advance Invoice App\Invoice App\obj\Debug\net5.0\Invoice App.AssemblyInfo.cs
+D:\slave\Visual Studio\C# Basic\CSharp-SEDC-TasksAndExercices\Class 02 Advance Invoice App\Invoice App\obj\Debug\net5.0\Invoice App.csproj.CoreCompileInputs.cache
+D:\slave\Visual Studio\C# Basic\CSharp-SEDC-TasksAndExercices\Class 02 Advance Invoice App\Invoice App\obj\Debug\net5.0\Invoice App.csproj.CopyComplete
+D:\slave\Visual Studio\C# Basic\CSharp-SEDC-TasksAndExercices\Class 02 Advance Invoice App\Invoice App\obj\Debug\net5.0\Invoice App.dll
+D:\slave\Visual Studio\C# Basic\CSharp-SEDC-TasksAndExercices\Class 02 Advance Invoice App\Invoice App\obj\Debug\net5.0\ref\Invoice App.dll
+D:\slave\Visual Studio\C# Basic\CSharp-SEDC-TasksAndExercices\Class 02 Advance Invoice App\Invoice App\obj\Debug\net5.0\Invoice App.pdb
+D:\slave\Visual Studio\C# Basic\CSharp-SEDC-TasksAndExercices\Class 02 Advance Invoice App\Invoice App\obj\Debug\net5.0\Invoice App.genruntimeconfig.cache
